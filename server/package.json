@@ -1,0 +1,34 @@
+{
+  "name": "hingsight-server",
+  "version": "1.0.0",
+  "description": "A Nodejs based fastify application for HindSight SErver.",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "start": "npm run build && node dist",
+    "restart": "rimraf dist && npm run start",
+    "dev": "nodemon --exec babel-node ./src/index.js --require dotenv/config"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/web3.js": "^1.74.0",
+    "axios": "^1.3.4",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.15.0",
+    "node-fetch": "^3.3.1",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/node": "^7.20.7",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.20.2",
+    "rimraf": "^4.4.1"
+  },
+  "engines": {
+    "node": "16.14.0"
+  },
+  "type": "module"
+}
