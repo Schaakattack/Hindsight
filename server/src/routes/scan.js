@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { Solscan, Etherscan } from '../url/index.js'
-import { SolanaController } from '../controllers/index.js'
+import { SolanaController, EtherController } from '../controllers/index.js'
 import querystring from 'querystring'
 const Scan = async(fastify, options)=>{
 
@@ -13,6 +13,7 @@ const Scan = async(fastify, options)=>{
         data = await SolanaController.getTransactionsByWallet(walletAddress, parseInt(limit), startTime, endTime)
         break;
       case 'ethereum':
+        data = await EtherController.getTransactionsByWallet(walletAddress, parseInt(limit), startTime, endTime)
         break;
     }
     return {data}
