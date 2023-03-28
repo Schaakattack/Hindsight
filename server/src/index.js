@@ -1,14 +1,12 @@
 // ESM
 import Fastify from 'fastify'
-import ScanRoute from './routes/scan-route.js'
+import Scan from './routes/scan.js'
 const fastify = Fastify({ logger: true })
 
-fastify.register(ScanRoute)
+fastify.register(Scan)
 fastify.get('/', async (request, reply) => {
   return {'msg': 'Root of HindSight Server'}
 })
-
-
 
 /**
  * Run the server!

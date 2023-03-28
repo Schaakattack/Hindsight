@@ -1,4 +1,4 @@
-const Ether = ()=> {
+const Etherscan = ()=> {
     return {
         tokenHolder: ()=>{
 
@@ -6,4 +6,4 @@ const Ether = ()=> {
     }
 }
 
-export default Ether
+export default Etherscan
