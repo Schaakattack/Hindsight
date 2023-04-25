@@ -1,24 +1,40 @@
-import React, { useState } from "react";
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-
-import MembershipItem from '../components/MembershipItem'
+import React, { useState } from 'react';
 
 import CheckIcon from '../assets/check-icon.svg'
 
+import Header from '../components/layouts/Header'
+import Footer from '../components/layouts/Footer'
+
+import MembershipItem from '../components/items/MembershipItem'
+
 const MEMBERSHIP_DATA_LIST = [
     { 
-        title: "Individual", 
-        desc: "Upgrade to our Individual Plan for comprehensive token analysis.", 
-        list: ['Unlimited Access', 'Advanced historical data analysis and comparison', 'Support'],
-        price_info: { price: "$5", title:'per month' },
+        title: 'Individual', 
+        desc: 'Upgrade to our Individual Plan for comprehensive token analysis.', 
+        list: [
+            'Unlimited Access', 
+            'Advanced historical data analysis and comparison', 
+            'Support'
+        ],
+        price_info: { 
+            price: '$5', 
+            title:'per month' 
+        },
         sign_up_link: ''
     },
     { 
-        title: "Team", 
-        desc: "Elevate your token analysis with our Team Plan, designed for collaborative use.", 
-        list: ['Unlimited Access', 'Advanced historical data analysis and comparison', '5 Team Members', 'Support'],
-        price_info: { price: "$20", title:'per month' },
+        title: 'Team', 
+        desc: 'Elevate your token analysis with our Team Plan, designed for collaborative use.', 
+        list: [
+            'Unlimited Access', 
+            'Advanced historical data analysis and comparison', 
+            '5 Team Members', 
+            'Support'
+        ],
+        price_info: { 
+            price: '$20', 
+            title:'per month' 
+        },
         sign_up_link: ''
     }
 ];
@@ -30,34 +46,37 @@ function Premium(){
     };
 
     return (
-        <div className="App">      
+        <>
             <Header />
 
-            <section className='membership-section pt-[114px]'>
-                <div className="container mx-auto flex flex-col gap-10">
-                    <h3 className="text-center section-title">Unlock Premium Membership</h3>
-                    <p className='section-description text-center px-[70px]'>
+            <section className='membership-section pt-10 pb-95.5 pl-35 pr-35'>
+                <div className='container mx-auto flex flex-col gap-10'>
+                    <h3 className='section-title text-title-xl font-semibold text-white text-center'>Unlock Premium Membership</h3>
+                    <p className='section-description text-title-x-md text-secondary-color text-center px-19.5 text-center'>
                         Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco dolor proident.
                     </p>
                     <div className='toggle-action flex items-center justify-center gap-2.5'>
-                        <label className={ `toggle-action__label ${toggleActive ? 'active' : '' }` }>Monthy</label>
+                        <label className={ `toggle-action__label font-medium text-base tracking-tighter ${toggleActive ? 'text-brand-50' : 'text-fourth-color' }` }>Monthy</label>
                         <div className='toggle-button'>                        
-                            <input type="checkbox" id="switch" onChange={ handleChange } /><label for="switch"><img src={CheckIcon} className='icon' /></label>
+                            <input type='checkbox' id='switch' className='h-0 w-0 hidden invisible' onChange={ handleChange } />
+                            <label for='switch' className='block w-xxs h-xxs rounded-xxl cursor-pointer indent-m-9999 bg-tertiary-color relative'>
+                                <img src={ CheckIcon } className='icon top-1.2 left-1.2 min-w-3 min-h-xxs bg-btn-switch-circle-bg-color rounded-r-full rounded-l-full transition-all duration-300 py-1.7 px-1.3 absolute' />
+                            </label>
                         </div>
-                        <label className={ `toggle-action__label ${!toggleActive ? 'active' : '' }` }>Yearly</label>
-                    </div>                    
+                        <label className={ `toggle-action__label font-medium text-base tracking-tighter ${toggleActive ? 'text-fourth-color' : 'text-brand-50' }` }>Yearly</label>
+                    </div>
                     <div className='flex flex-wrap px-[100px]'>
                         {MEMBERSHIP_DATA_LIST.map((item, idx) => (
-                            <MembershipItem { ...item } />
+                            <MembershipItem { ...item } key={ idx } />
                         ))}
                     </div>
                 </div>
             </section>
 
-            <div className='main-bg z-[-2]'></div>
+            <div className='main-bg block w-full h-full top-0 bg-main-bg bg-cover absolute z-[-2]'></div>
             
             <Footer />
-        </div>
+        </>
     )
 }
 
