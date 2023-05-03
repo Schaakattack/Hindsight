@@ -31,19 +31,19 @@ const STAGE_LIST = [
 
 export default function Stages(){
     return (
-        <section className='stage pt-19 pb-25 relative'>
-            <div className='container mx-auto flex justify-center flex-col gap-16.3'>
-                <h2 className='font-brand-bold font-bold text-title-xl text-white text-center'>Roadmap</h2>
+        <section className='relative z-10 stage pt-19 pb-25'>
+            <div className='container mx-auto max-w-xl flex justify-center flex-col gap-16.3'>
+                <h2 className='font-brand-medium text-xxx-large-s text-white text-center'>Roadmap</h2>
                 <div className='flex gap-6.3 text-center pb-7.5'>
                     {STAGE_LIST.map((item, idx) => (
                         <StageItem { ...item } key={ idx } />
                     ))}
                 </div>
                 <div className='flex justify-center'>
-                    <DefaultButton className='btn-lg' to='/roadmap'>View Detailed Roadmap</DefaultButton>
+                    <DefaultButton className='btn-md' to='/roadmap'>View Detailed Roadmap</DefaultButton>
                 </div>
             </div>
-            <div className='stage-bg bg-brand-1100 top-0 w-full h-full z-[-2] absolute'></div>
+            <div className='stage-bg top-0 w-full h-full z-[-2] absolute'></div>
         </section>
     )
 }

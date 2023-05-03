@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-import FooterLogo from '../../assets/footer_logo.svg'
+import FooterLogo from '../../assets/app-logo.png'
 
 import Instagram from '../../assets/icons/instagram.svg'
 import Telegram from '../../assets/icons/telegram.svg'
@@ -12,7 +12,7 @@ import Discord from '../../assets/icons/discord.svg'
 const ABOUT_LINK_LIST = [
     { 
         text: 'Work with us', 
-        href: '/work_with_us' 
+        href: '/work-with-us' 
     },
     { 
         text: 'Support', 
@@ -35,7 +35,7 @@ const ABOUT_LINK_LIST = [
 const SUPPORTED_CHAINS_LINK_LIST = [
     { 
         text: 'Ethereum', 
-        href: '/work_with_us' 
+        href: '/work-with-us' 
     },
     { 
         text: 'Solana', 
@@ -68,9 +68,9 @@ const SOCIAL_LINK_LIST = [
 
 export default function Footer(){
     return (
-        <footer className='footer py-10'>
-            <div className='container footer-inner mx-auto py-10 rounded-2xl bg-primary-color'>
-                <div className='flex justify-between pb-12.5 px-10'>
+        <footer className='footer pt-25 pb-10 relative z-10'>
+            <div className='container footer-inner mx-auto max-w-xl rounded-2xl'>
+                <div className='flex justify-between pb-12.5'>
                     <div className='footer-section flex flex-col'>
                         <Link to='#' className='footer-logo'>
                             <img src={ FooterLogo } alt='footer logo' />
@@ -80,27 +80,27 @@ export default function Footer(){
                         </p>
                     </div>
                     <div className='footer-section'>
-                        <h4 className='footer-section__title font-brand-bold font-bold text-title-sm text-white mb-9'>About Us</h4>   
+                        <h4 className='footer-section__title font-brand-bold font-bold text-xx-medium text-white mb-9'>About Us</h4>   
                         <ul className='footer-link__list flex flex-col gap-2.5'>
                             {ABOUT_LINK_LIST.map((link, idx) => (
                                 <li key={ idx }>
-                                    <Link to={ link.href } className='text-base font-medium tracking-tighter text-footer-color'>{ link.text }</Link>
+                                    <Link to={ link.href } className='text-base font-medium tracking-tighter text-footer-color hover:text-brand-400'>{ link.text }</Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
                     <div className='footer-section'>
-                        <h4 className='footer-section__title font-brand-bold font-bold text-title-sm text-white mb-9'>Supported Chains</h4>   
+                        <h4 className='footer-section__title font-brand-bold font-bold text-xx-medium text-white mb-9'>Supported Chains</h4>   
                         <ul className='footer-link__list flex flex-col gap-2.5'>
                             {SUPPORTED_CHAINS_LINK_LIST.map((link, idx) => (
                                 <li key={ idx }>
-                                    <Link to={ link.href } className='text-base font-medium tracking-tighter text-footer-color'>{ link.text }</Link>
+                                    <Link to={ link.href } className='text-base font-medium tracking-tighter text-footer-color hover:text-brand-400'>{ link.text }</Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
                     <div className='footer-section'>
-                        <h4 className='footer-section__title font-brand-bold font-bold text-title-sm text-white mb-9'>Connect With Us</h4>   
+                        <h4 className='footer-section__title font-brand-bold font-bold text-xx-medium text-white mb-9'>Connect With Us</h4>   
                         <ul className='footer-link__list flex justify-between gap-5'>
                             {SOCIAL_LINK_LIST.map((link, idx) => (
                                 <li key={ idx }>
@@ -114,7 +114,7 @@ export default function Footer(){
                 </div>      
                 <div className='copyright text-center'>
                     <p className='text-base font-medium tracking-tighter text-footer-color'>
-                        copyright ©2022 Hindsight, All rights reserved.
+                        Copyright ©2023 Hindsight, All rights reserved.
                     </p>
                 </div>          
             </div>

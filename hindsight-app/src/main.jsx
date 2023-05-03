@@ -10,7 +10,7 @@ import Login from './pages/Login'
 import Roadmap from './pages/Roadmap'
 import WorkWithUs from './pages/WorkWithUs'
 import Premium from './pages/Premium'
-import EtherScanHome from './pages/EtherScanHome'
+import DApp from './pages/DApp'
 import AllTokens from './pages/AllTokens'
 import MyWallet from './pages/MyWallet'
 import ErrorPage from './pages/404'
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage/>
 	},
 	{
-		path: '/work_with_us',
+		path: '/work-with-us',
 		element: <WorkWithUs />,
 		errorElement: <ErrorPage/>
 	},
@@ -44,24 +44,24 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage/>
 	},
 	{
-		path: '/ether_scan_home',
-		element: <EtherScanHome />,
+		path: '/dapp',
+		element: <DApp />,
 		errorElement: <ErrorPage/>
 	},
 	{
-		path: '/all_tokens',
+		path: '/tokens',
 		element: <AllTokens />,
 		errorElement: <ErrorPage />
 	},
 	{
-		path: '/my_wallet',
+		path: '/wallet',
 		element: <MyWallet />,
 		errorElement: <ErrorPage />
 	}
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-	<React.StrictMode>
+	// <React.StrictMode>
 		<RouterProvider router={ router }/>
-	</React.StrictMode>
+	// </React.StrictMode>
 )

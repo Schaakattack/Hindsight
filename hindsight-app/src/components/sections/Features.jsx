@@ -30,12 +30,12 @@ const FEATURE_LIST = [
 
 export default function Header(){
     return (
-        <section className='key-features pt-10 pb-42'>
-            <div className='container mx-auto flex flex-col items-center items-center gap-10'>
-                <h2 className='text-title-xl font-semibold text-white'>Key Features</h2>
-                <p className='text-base font-medium text-secondary-color text-center'>
-                    Our innovative data visualization tools allow you to quickly gain insights into the data. Whether you're a seasoned<br />
-                    blockchain investor or just getting started, our platform is perfect for you.
+        <section className='relative z-10 key-features pt-10 pb-42'>
+            <div className='container mx-auto max-w-xl flex flex-col items-center gap-10'>
+                <h2 className='font-brand-medium text-white text-xx-large'>Key Features</h2>
+                <p className='font-brand-medium font-medium text-x-medium-s text-secondary-color text-center'>
+                    Our innovative data visualization tools allow you to quickly gain insights into the <br />data. Whether you're a seasoned
+                    blockchain investor or just getting started, our<br /> platform is perfect for you.
                 </p>
                 <div className='flex flex-wrap gap-y-11.5 ml-m-8.5 mr-m-8.5'>
                     {FEATURE_LIST.map((item, idx) => (

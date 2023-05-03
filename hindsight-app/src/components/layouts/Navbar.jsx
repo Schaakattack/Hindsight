@@ -1,17 +1,17 @@
 import { useLocation } from "react-router-dom"
 
-import NavItem from './NavItem'
+import NavItem from '../items/NavItem'
 
 const MENU_LIST = [
 	{ 
-		text: 'About Us', 
+		text: 'About us', 
 		href: '/about_us', 
-		before_text: 'About_Us' 
+		before_text: 'About_us' 
 	},
 	{ 
-		text: 'Work With Us', 
-		href: '/work_with_us', 
-		before_text: 'Work_With_Us' 
+		text: 'Work with Us', 
+		href: '/work-with-us', 
+		before_text: 'Work_with_us' 
 	},
 	{ 
 		text: 'Go Premium', 
@@ -21,7 +21,8 @@ const MENU_LIST = [
 	{ 
 		text: 'Resources', 
 		href: '/resources', 
-		before_text: 'Resources' 
+		before_text: 'Resources',
+		isDropDown: true
 	},
 ];
 

@@ -1,31 +1,31 @@
 import { Link } from 'react-router-dom'
 
-import Header from '../components/layouts/Header'
-import Footer from '../components/layouts/Footer'
+import Header from '@/components/layouts/Header'
+import Footer from '@/components/layouts/Footer'
+import Particle from '@/components/Particle'
+import EthereumIcon from '@/assets/ethereum-icon.svg'
+import SolanaIcon from '@/assets/solana-icon.svg'
+import CosmosIcon from '@/assets/cosmos-icon.svg'
 
-import EthereumIcon from '../assets/ethereum-icon.svg'
-import SolanaIcon from '../assets/solana-icon.svg'
-import CosmosIcon from '../assets/cosmos-icon.svg'
+import BlockchainButton from '@/components/buttons/BlockchainButton'
+import DefaultButton from '@/components/buttons/DefaultButton'
+import FeaturedTokenItem from '@/components/items/FeaturedTokenItem'
 
-import BlockchainButton from '../components/buttons/BlockchainButton'
-import DefaultButton from '../components/buttons/DefaultButton'
-import FeaturedTokenItem from '../components/items/FeaturedTokenItem'
+import EllipseIcon01 from '@/assets/ellipse/01.png'
+import EllipseIcon02 from '@/assets/ellipse/02.png'
+import EllipseIcon03 from '@/assets/ellipse/03.png'
+import EllipseIcon04 from '@/assets/ellipse/04.png'
+import EllipseIcon05 from '@/assets/ellipse/05.png'
+import EllipseIcon06 from '@/assets/ellipse/06.png'
 
-import EllipseIcon01 from '../assets/ellipse/01.png'
-import EllipseIcon02 from '../assets/ellipse/02.png'
-import EllipseIcon03 from '../assets/ellipse/03.png'
-import EllipseIcon04 from '../assets/ellipse/04.png'
-import EllipseIcon05 from '../assets/ellipse/05.png'
-import EllipseIcon06 from '../assets/ellipse/06.png'
+import SearchIcon from '@/assets/search-icon.svg'
 
-import SearchIcon from '../assets/search-icon.svg'
+import StarIcon from '@/assets/star-icon02.svg'
+import DropdownIcon from '@/assets/dropdown-icon.svg'
 
-import StarIcon from '../assets/star-icon02.svg'
-import DropdownIcon from '../assets/dropdown-icon.svg'
-
-import WebsiteIcon from '../assets/website-icon.svg'
-import EtherscanIcon from '../assets/etherscan-icon.svg'
-import StarIcon01 from '../assets/star-icon.svg'
+import WebsiteIcon from '@/assets/website-icon.svg'
+import EtherscanIcon from '@/assets/etherscan-icon.svg'
+import StarIcon01 from '@/assets/star-icon.svg'
 
 const BLOCKCHAIN_BUTTON_LIST = [
     { 
@@ -163,10 +163,11 @@ const TOKEN_LIST = [
 function AllTokens(){
   return (
     <>
+      <Particle/>
       <Header isApp={ true } isLogin={ true }></Header>
 
       <section className='blockchain-action-group-section pt-[40px] pb-[80px]'>
-        <div className='container mx-auto'>
+        <div className='container mx-auto max-w-xl'>
           <div className='blockchain-action-group flex justify-between items-center mt-[1px]'>
             <div className='blockchain-action-group__l flex gap-[20px]'>                    
               { BLOCKCHAIN_BUTTON_LIST.map((btnInfo, idx) => (
@@ -181,7 +182,7 @@ function AllTokens(){
       </section>
 
       <section className='featured-token-section'>
-        <div className='container mx-auto'>
+        <div className='container mx-auto max-w-xl'>
           <div className='featured-token-group flex justify-between'>
             {ELLIPSE_LIST.map((item, idx) => (
               <FeaturedTokenItem { ...item }  key={ idx } />
@@ -190,8 +191,8 @@ function AllTokens(){
         </div>
       </section>
 
-      <form action='#' className='search-form pt-10 pb-20'>
-        <div className='container mx-auto px-[192px]'>
+      <form action='#' className='search-form pt-10'>
+        <div className='container mx-auto max-w-xl px-[192px]'>
           <div className='input-group relative'>
             <input type='text' className='form-control text-base tracking-x-tightest py-3.5 px-6 w-full text-fifth-color font-normal outline-0 rounded-3.5 bg-gradient-form-control-bg-color bg-background' placeholder='Search by name, address, symbol' />
             <span className='icon block top-0 right-0 rounded-tr-3.5 rounded-br-3.5 bg-gradient-form-control-bg-color bg-background py-3.5 pl-4.6 pr-6.55 absolute'>
@@ -202,14 +203,14 @@ function AllTokens(){
       </form>
 
       <section className='alll-listed-tokens'>
-        <div className='container mx-auto'>
-          <h2 className='pt-12.5 pb-15 font-brand-bold font-bold text-title-lg text-white text-center'>All listed tokens</h2>
+        <div className='container mx-auto max-w-xl'>
+          <h2 className='pt-12.5 pb-15 font-brand-bold font-bold text-xs-large text-white text-center'>All listed tokens</h2>
           <div className='action-group flex justify-start'>
             <DefaultButton className='btn-outline-md' icon={ StarIcon }>Watchlist</DefaultButton>
           </div>
 
           <div className='tokens-list-table-wrapper py-12.5 px-34.5 mt-8.5 bg-brand-1100 rounded-2xl relative after:bg-gradient-primary after:bg-origin-border after:top-m-1 after:bottom-m-1 after:left-m-1 after:right-m-1 after:rounded-xl after:border after:border-transparent after:rounded-2xl after:z-[-1] after:absolute webkit-mask backdrop-blur-lg'>
-            <h3 className='pb-10 font-brand-bold font-bold text-title-lg text-white text-center'>All listed tokens</h3>
+            <h3 className='pb-10 font-brand-bold font-bold text-xs-large text-white text-center'>All listed tokens</h3>
             <table className='tokens-list-table w-full relative'>
               <thead>
                 <tr>
@@ -247,7 +248,7 @@ function AllTokens(){
         </div>
       </section>
 
-      <div className='main-bg block w-full h-full top-0 bg-main-bg bg-cover absolute z-[-2]'></div>
+      <div className='block w-full h-full top-0 bg-cover absolute z-[-2]'></div>
 
       <Footer></Footer>
     </>

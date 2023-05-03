@@ -14,7 +14,9 @@ const MEMBERSHIP_DATA_LIST = [
         list: [
             'Unlimited Access', 
             'Advanced historical data analysis and comparison', 
-            'Support'
+            'Support',
+            'No Ads',
+            'Tagged suspicious addresses'
         ],
         price_info: { 
             price: '$5', 
@@ -28,8 +30,10 @@ const MEMBERSHIP_DATA_LIST = [
         list: [
             'Unlimited Access', 
             'Advanced historical data analysis and comparison', 
-            '5 Team Members', 
-            'Support'
+            'Discord Bot', 
+            'Support',
+            'Report Wallets',
+            '5 Team Members'
         ],
         price_info: { 
             price: '$20', 
@@ -49,23 +53,23 @@ function Premium(){
         <>
             <Header />
 
-            <section className='membership-section pt-10 pb-95.5 pl-35 pr-35'>
-                <div className='container mx-auto flex flex-col gap-10'>
-                    <h3 className='section-title text-title-xl font-semibold text-white text-center'>Unlock Premium Membership</h3>
-                    <p className='section-description text-title-x-md text-secondary-color text-center px-19.5 text-center'>
-                        Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco dolor proident.
+            <section className='membership-section pt-11.8 px-35'>
+                <div className='container mx-auto max-w-xl flex flex-col gap-10.5'>
+                    <h3 className='section-title font-brand-bold text-xxx-large-s font-semibold text-white text-center'>Unlock Hindsight’s Full Potential</h3>
+                    <p className='section-description text-medium text-secondary-color text-center px-19.5'>
+                        Our premium service provides even more advanced features and benefits for those who want to get insight and avoid scams.
                     </p>
                     <div className='toggle-action flex items-center justify-center gap-2.5'>
                         <label className={ `toggle-action__label font-medium text-base tracking-tighter ${toggleActive ? 'text-brand-50' : 'text-fourth-color' }` }>Monthy</label>
                         <div className='toggle-button'>                        
                             <input type='checkbox' id='switch' className='h-0 w-0 hidden invisible' onChange={ handleChange } />
-                            <label for='switch' className='block w-xxs h-xxs rounded-xxl cursor-pointer indent-m-9999 bg-tertiary-color relative'>
-                                <img src={ CheckIcon } className='icon top-1.2 left-1.2 min-w-3 min-h-xxs bg-btn-switch-circle-bg-color rounded-r-full rounded-l-full transition-all duration-300 py-1.7 px-1.3 absolute' />
+                            <label for='switch' className='block w-xxs h-xxs rounded-xxl cursor-pointer indent-m-9999 h-8 bg-tertiary-color relative'>
+                                <img src={ CheckIcon } className='icon top-1 left-1 min-w-3 min-h-xxs bg-btn-switch-circle-bg-color rounded-r-full rounded-l-full transition-all duration-300 py-1.7 px-1.3 absolute' />
                             </label>
                         </div>
                         <label className={ `toggle-action__label font-medium text-base tracking-tighter ${toggleActive ? 'text-fourth-color' : 'text-brand-50' }` }>Yearly</label>
                     </div>
-                    <div className='flex flex-wrap px-[100px]'>
+                    <div className='flex flex-wrap justify-center'>
                         {MEMBERSHIP_DATA_LIST.map((item, idx) => (
                             <MembershipItem { ...item } key={ idx } />
                         ))}
@@ -73,7 +77,7 @@ function Premium(){
                 </div>
             </section>
 
-            <div className='main-bg block w-full h-full top-0 bg-main-bg bg-cover absolute z-[-2]'></div>
+            <div className='block w-full h-full top-0 bg-cover absolute z-[-2]'></div>
             
             <Footer />
         </>

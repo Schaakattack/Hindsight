@@ -59,10 +59,10 @@ function Roadmap(){
         <>
             <Header />
 
-            <section className='roadmap-section mb-6'>
-                <div className='container mx-auto'>
-                    <h3 className='section-title font-brand-bold font-bold text-title-xxl text-white my-11.7 text-center'>Roadmap</h3>
-                    <div className='flex flex-col gap-[49px]'>
+            <section className='roadmap-section'>
+                <div className='container mx-auto max-w-xl'>
+                    <h3 className='section-title font-brand-bold font-bold text-xxx-large-s text-white pt-12.5 pb-10 text-center'>Roadmap</h3>
+                    <div className='flex flex-col gap-9.75'>
                         {STAGE_LIST.map((item, idx) => (
                             <RoadmapItem { ...item } key={ idx } />
                         ))}
@@ -70,7 +70,7 @@ function Roadmap(){
                 </div>
             </section>
                             
-            <div className='main-bg block w-full h-full top-0 bg-main-bg bg-cover absolute z-[-2]'></div>
+            <div className='block w-full h-full top-0 bg-cover absolute z-[-2]'></div>
 
             <Footer />
         </>
