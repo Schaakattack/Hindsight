@@ -166,7 +166,7 @@ function AllTokens(){
       <Particle/>
       <Header isApp={ true } isLogin={ true }></Header>
 
-      <section className='blockchain-action-group-section pt-[40px] pb-[80px]'>
+      <section className='blockchain-action-group-section pt-[40px] pb-[80px] relative z-10'>
         <div className='container mx-auto max-w-xl'>
           <div className='blockchain-action-group flex justify-between items-center mt-[1px]'>
             <div className='blockchain-action-group__l flex gap-[20px]'>                    
@@ -181,7 +181,7 @@ function AllTokens(){
         </div>
       </section>
 
-      <section className='featured-token-section'>
+      <section className='featured-token-section relative z-10'>
         <div className='container mx-auto max-w-xl'>
           <div className='featured-token-group flex justify-between'>
             {ELLIPSE_LIST.map((item, idx) => (
@@ -191,7 +191,7 @@ function AllTokens(){
         </div>
       </section>
 
-      <form action='#' className='search-form pt-10'>
+      <form action='#' className='search-form pt-10 relative z-10'>
         <div className='container mx-auto max-w-xl px-[192px]'>
           <div className='input-group relative'>
             <input type='text' className='form-control text-base tracking-x-tightest py-3.5 px-6 w-full text-fifth-color font-normal outline-0 rounded-3.5 bg-gradient-form-control-bg-color bg-background' placeholder='Search by name, address, symbol' />
@@ -209,7 +209,7 @@ function AllTokens(){
             <DefaultButton className='btn-outline-md' icon={ StarIcon }>Watchlist</DefaultButton>
           </div>
 
-          <div className='tokens-list-table-wrapper py-12.5 px-34.5 mt-8.5 bg-brand-1100 rounded-2xl relative after:bg-gradient-primary after:bg-origin-border after:top-m-1 after:bottom-m-1 after:left-m-1 after:right-m-1 after:rounded-xl after:border after:border-transparent after:rounded-2xl after:z-[-1] after:absolute webkit-mask backdrop-blur-lg'>
+          <div className='tokens-list-table-wrapper py-12.5 px-34.5 mt-8.5 bg-brand-1100 rounded-2xl relative after:bg-gradient-primary after:bg-origin-border after:top-m-1 after:bottom-m-1 after:left-m-1 after:right-m-1 after:rounded-xl after:border after:border-transparent after:z-[-1] after:absolute webkit-mask backdrop-blur-lg'>
             <h3 className='pb-10 font-brand-bold font-bold text-xs-large text-white text-center'>All listed tokens</h3>
             <table className='tokens-list-table w-full relative'>
               <thead>

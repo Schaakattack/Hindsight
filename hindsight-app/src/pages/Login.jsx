@@ -46,7 +46,7 @@ export default function Login(){
                     </div>
 
                     <Message className='warning'>
-                        Info: MetaMask is NOT detected in your browser, please enable<br />it and refresh this page
+                        Info: MetaMask is NOT detected in your browser, please enable it and refresh this page
                     </Message>
 
                     <div className='wallet-list flex flex-col gap-4.3'>

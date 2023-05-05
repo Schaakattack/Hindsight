@@ -53,7 +53,7 @@ function Premium(){
         <>
             <Header />
 
-            <section className='membership-section pt-11.8 px-35'>
+            <section className='membership-section pt-11.8 px-35 relative z-10'>
                 <div className='container mx-auto max-w-xl flex flex-col gap-10.5'>
                     <h3 className='section-title font-brand-bold text-xxx-large-s font-semibold text-white text-center'>Unlock Hindsight’s Full Potential</h3>
                     <p className='section-description text-medium text-secondary-color text-center px-19.5'>

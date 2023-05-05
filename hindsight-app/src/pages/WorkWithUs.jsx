@@ -44,7 +44,7 @@ function WorkWithUs(){
         <>
             <Particle/>
             <Header />
-            <section className='data-visualisation-section pt-9'>
+            <section className='data-visualisation-section pt-9 relative z-10'>
                 <div className='container mx-auto max-w-xl'>
                     <h3 className='section-title pb-5 text-xxx-large-f font-brand-bold font-semibold text-white text-center'>The most Advanced Data Visualization Suite</h3>
                     <p className='section-description text-2xl font-normal text-secondary-color mb-21 text-center'>
