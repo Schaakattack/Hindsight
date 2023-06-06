@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 
-import WalletAvatarIcon from '../assets/ellipse/07.svg'
-import DrondownIcon from '../assets/dropdown-icon.svg'
+import WalletAvatarIcon from '@/assets/ellipse/07.svg'
+import DrondownIcon from '@/assets/dropdown-icon.svg'
 
-import Header from '../components/layouts/Header'
-import Settings from '../components/items/Settings'
+import Header from '@/components/layouts/Header'
+import Settings from '@/components/items/Settings'
 
-import BubbleIcon from '../assets/filters/bubble.svg'
-import BubbleIconActive from '../assets/filters/bubble-active.svg'
-import FilterIcon from '../assets/filters/filter.svg'
-import FilterIconActive from '../assets/filters/filter-active.svg'
-import HistoryIcon from '../assets/filters/history.svg'
-import HistoryIconActive from '../assets/filters/history-active.svg'
-import WalletIcon from '../assets/filters/wallet.svg'
-import WalletIconActive from '../assets/filters/wallet-active.svg'
+import BubbleIcon from '@/assets/filters/bubble.svg'
+import BubbleIconActive from '@/assets/filters/bubble-active.svg'
+import FilterIcon from '@/assets/filters/filter.svg'
+import FilterIconActive from '@/assets/filters/filter-active.svg'
+import HistoryIcon from '@/assets/filters/history.svg'
+import HistoryIconActive from '@/assets/filters/history-active.svg'
+import WalletIcon from '@/assets/filters/wallet.svg'
+import WalletIconActive from '@/assets/filters/wallet-active.svg'
 
-import CircleSymbol from '../assets/symbols/circle.svg'
-import SquareSymbol from '../assets/symbols/square.svg'
-import TriangleSymbol from '../assets/symbols/triangle.svg'
+import CircleSymbol from '@/assets/symbols/circle.svg'
+import SquareSymbol from '@/assets/symbols/square.svg'
+import TriangleSymbol from '@/assets/symbols/triangle.svg'
 
 function MyWallet(){
     const [filterState, setFilterState] = useState('bubble')

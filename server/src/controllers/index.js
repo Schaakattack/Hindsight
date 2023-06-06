@@ -1,6 +1,6 @@
 import SolanaController from "./solana.js"
-import EtherController from "./ether.js"
+import EthereumController from "./ethereum.js"
 export {
     SolanaController,
-    EtherController
+    EthereumController
 }

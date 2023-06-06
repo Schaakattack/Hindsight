@@ -9,15 +9,18 @@ import BannerImg02 from "@/assets/banner-img02.png";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import Banner from "@/components/sections/Banner";
+import SubscriptionInfo from "@/components/sections/SubscriptionInfo";
 import WhatDoWe from "@/components/sections/WhatDoWe";
 import Features from "@/components/sections/Features";
 import Roadmap from "@/components/sections/Stages";
 import Particle from "@/components/Particle";
+import HowItWorks from "../components/sections/HowItWorks";
+import Plans from "../components/sections/Plans";
 
 const BANNER_LIST = [
 	{
-		title: "Blockchain data <br /> visualization<br> made easy.",
-		desc: "Gain insights into token trends and network activity from different blockchain networks in a visually appealing and easy-to-understand format.",
+		title: "Blockchain data <br /> visualization made easy.",
+		desc: "Visualize trends in blockchain tokens and network activity easily.",
 		img: BannerImg02,
 	},
 ];
@@ -26,14 +29,16 @@ function Home() {
 
 	return (
 		<>
-			<Particle/>
+			{/* <Particle/> */}
 			<Header />
 			{BANNER_LIST.map((item, idx) => (
 				<Banner {...item} key={idx} />
 			))}
+			<SubscriptionInfo />
 			<WhatDoWe />
+			<HowItWorks/>
 			<Features />
-			<Roadmap />
+			<Plans/>
 			<Footer />
 		</>
 	);

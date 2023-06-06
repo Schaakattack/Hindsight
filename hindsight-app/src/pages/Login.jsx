@@ -1,4 +1,4 @@
-
+import Header from "../components/layouts/Header"
 import { Link } from "react-router-dom"
 
 import LogoIcon from '../assets/login-logo.png'
@@ -13,17 +13,17 @@ import Message from '../components/sections/Message'
 
 const WALLET_LIST = [
     { 
-        text: 'MetaMask Wallet', 
+        text: 'Continue with MetaMask', 
         icon: MetamaskIcon, 
         desc: 'Connect using a browser plugin or mobile app. Best supported on Chrome or Firefox.' 
     },
     { 
-        text: 'Coinbase Wallet', 
+        text: 'Continue with Coinbase', 
         icon: CoinbaseIcon, 
         desc: 'Connect using a browser plugin or mobile app. Best supported on Chrome or Firefox.' 
     },
     { 
-        text: 'Phantom Wallet', 
+        text: 'Continue with Phantom', 
         icon: PhantomIcon, 
         desc: 'Connect using a browser plugin or mobile app. Best supported on Chrome or Firefox.' 
     }
@@ -32,35 +32,31 @@ const WALLET_LIST = [
 export default function Login(){
     return (
         <>
-            <header className='login-header py-10 flex justify-center'>
+            <Header/>
+            {/* <header className='login-header py-10 flex justify-center'>
                 <div className='max-w-md mx-auto'>
                     <Link to='/'><img src={ LogoIcon } alt='' /></Link>
                 </div>
-            </header>
+            </header> */}
 
-            <div className='login-content'>
-                <div className='logo-inner max-w-md mx-auto flex flex-col gap-10'>
+            <div className='login-content mt-[66.5px] w-[660px] mx-auto'>
+                <div className='logo-inner mx-auto flex flex-col gap-10 bg-white rounded-medium px-28 pt-10 pb-20'>
                     <div className='head'>
-                        <h1 className='pb-4.3 font-brand-bold font-bold text-xx-large text-white text-center'>Login to Hindsight</h1>
-                        <p className='text-xx-medium font-normal text-white text-center'>Connect with your web3 based wallet and sign-in</p>
+                        <h1 className='pb-4.3 font-brand-bold font-bold text-sx-large text-dark-grey-3 text-center'>Login to Hindsight</h1>
+                        <p className='text-x-medium font-normal text-dark-grey-3 text-center'>Connect with your web3 based wallet and sign-in</p>
                     </div>
-
-                    <Message className='warning'>
+                    {/* <Message className='warning'>
                         Info: MetaMask is NOT detected in your browser, please enable it and refresh this page
-                    </Message>
+                    </Message> */}
 
-                    <div className='wallet-list flex flex-col gap-4.3'>
+                    <div className='wallet-list flex flex-col gap-6'>
                         {WALLET_LIST.map((item, idx) => (
                             <WalletItem { ...item } key={ idx } />
                         ))}
                     </div>
-
-                    <span className='text-divider block w-full font-normal text-xx-medium text-white text-center'>or</span>
-                    <WalletItem text='Google' icon={ GoogleIcon } desc='Sign in with your Google account.' />
-
-                    <div className='footer mb-9'>
-                        <p className='font-medium text-xx-small tracking-tightest text-white text-center'>By connecting your wallet and signing a message, you agree to Hindsight’s Term’s & Conditions and Privacy Policy</p>
-                    </div>
+                    <span className='text-divider block w-full font-normal text-xxx-small text-dark-grey-3 text-center'>By connecting a wallet, you agree to Hindsights’ <b>Terms of Service</b> and consent to its <b>Privacy Policy</b>.</span>
+                    <span className='text-divider block w-full font-normal text-xx-medium text-dark-grey-3 text-center'>Or</span>
+                    <WalletItem text='Continue with Google' icon={ GoogleIcon } desc='Sign in with your Google account.' />
                 </div>
             </div>
 {/*             

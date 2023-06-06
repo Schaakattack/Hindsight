@@ -58,8 +58,7 @@ function Roadmap(){
     return (
         <>
             <Header />
-
-            <section className='roadmap-section'>
+            <section className='roadmap-section mb-72'>
                 <div className='container mx-auto max-w-xl'>
                     <h3 className='section-title font-brand-bold font-bold text-xxx-large-s text-white pt-12.5 pb-10 text-center'>Roadmap</h3>
                     <div className='flex flex-col gap-9.75'>
@@ -69,9 +68,6 @@ function Roadmap(){
                     </div>
                 </div>
             </section>
-                            
-            <div className='block w-full h-full top-0 bg-cover absolute z-[-2]'></div>
-
             <Footer />
         </>
     )

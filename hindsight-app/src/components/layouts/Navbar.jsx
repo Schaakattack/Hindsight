@@ -1,45 +1,40 @@
-import { useLocation } from "react-router-dom"
-
-import NavItem from '../items/NavItem'
+import { useLocation } from "react-router-dom";
+import NavItem from "../items/NavItem";
+import React from "react";
+import DropdownMenu from "../DropdownMenu";
 
 const MENU_LIST = [
-	{ 
-		text: 'About us', 
-		href: '/about_us', 
-		before_text: 'About_us' 
+	{
+		text: "Pricing",
+		href: "/work-with-us",
+		before_text: "Work_with_us",
 	},
-	{ 
-		text: 'Work with Us', 
-		href: '/work-with-us', 
-		before_text: 'Work_with_us' 
-	},
-	{ 
-		text: 'Go Premium', 
-		href: '/premium', 
-		before_text: 'Go_Premium' 
-	},
-	{ 
-		text: 'Resources', 
-		href: '/resources', 
-		before_text: 'Resources',
-		isDropDown: true
+	{
+		text: "Explore",
+		href: "/premium",
+		before_text: "Go_Premium",
 	},
 ];
 
-const Navbar = (children) => {	
-  const location = useLocation()
+const Navbar = (children) => {
+	const location = useLocation();
 
-  return (
-    <nav className='nav'>
-		<ul className='flex justify-between gap-6 nav__menu-list'>
-			{MENU_LIST.map((menu, idx) => (
-				<li key={ idx }>
-					<NavItem active={ location.pathname === menu.href } {...menu} />
+	return (
+		<nav className="nav">
+			<ul className="flex justify-between gap-12 nav__menu-list align-middle content-center items-center place-items-center	">
+				<li>
+					<DropdownMenu/>
 				</li>
-			))}
-		</ul>
-    </nav>
-  );
+				{MENU_LIST.map((menu, idx) => (
+					<li key={idx}>
+						<NavItem
+							isDropDown={false} active={location.pathname === menu.href}
+							{...menu}						/>
+					</li>
+				))}
+			</ul>
+		</nav>
+	);
 };
 
-export default Navbar
+export default Navbar;

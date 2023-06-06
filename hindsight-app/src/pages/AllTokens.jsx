@@ -1,31 +1,31 @@
 import { Link } from 'react-router-dom'
 
-import Header from '@/components/layouts/Header'
-import Footer from '@/components/layouts/Footer'
-import Particle from '@/components/Particle'
-import EthereumIcon from '@/assets/ethereum-icon.svg'
-import SolanaIcon from '@/assets/solana-icon.svg'
-import CosmosIcon from '@/assets/cosmos-icon.svg'
+import Header from '../components/layouts/Header'
+import Footer from '../components/layouts/Footer'
+import Particle from '../components/Particle'
+import EthereumIcon from '../assets/ethereum-icon.svg'
+import SolanaIcon from '../assets/solana-icon.svg'
+import CosmosIcon from '../assets/cosmos-icon.svg'
 
-import BlockchainButton from '@/components/buttons/BlockchainButton'
-import DefaultButton from '@/components/buttons/DefaultButton'
-import FeaturedTokenItem from '@/components/items/FeaturedTokenItem'
+import BlockchainButton from '../components/buttons/BlockchainButton'
+import DefaultButton from '../components/buttons/DefaultButton'
+import FeaturedTokenItem from '../components/items/FeaturedTokenItem'
 
-import EllipseIcon01 from '@/assets/ellipse/01.png'
-import EllipseIcon02 from '@/assets/ellipse/02.png'
-import EllipseIcon03 from '@/assets/ellipse/03.png'
-import EllipseIcon04 from '@/assets/ellipse/04.png'
-import EllipseIcon05 from '@/assets/ellipse/05.png'
-import EllipseIcon06 from '@/assets/ellipse/06.png'
+import EllipseIcon01 from '../assets/ellipse/01.png'
+import EllipseIcon02 from '../assets/ellipse/02.png'
+import EllipseIcon03 from '../assets/ellipse/03.png'
+import EllipseIcon04 from '../assets/ellipse/04.png'
+import EllipseIcon05 from '../assets/ellipse/05.png'
+import EllipseIcon06 from '../assets/ellipse/06.png'
 
-import SearchIcon from '@/assets/search-icon.svg'
+import SearchIcon from '../assets/search-icon.svg'
 
-import StarIcon from '@/assets/star-icon02.svg'
-import DropdownIcon from '@/assets/dropdown-icon.svg'
+import StarIcon from '../assets/star-icon02.svg'
+import DropdownIcon from '../assets/dropdown-icon.svg'
 
-import WebsiteIcon from '@/assets/website-icon.svg'
-import EtherscanIcon from '@/assets/etherscan-icon.svg'
-import StarIcon01 from '@/assets/star-icon.svg'
+import WebsiteIcon from '../assets/website-icon.svg'
+import EtherscanIcon from '../assets/etherscan-icon.svg'
+import StarIcon01 from '../assets/star-icon.svg'
 
 const BLOCKCHAIN_BUTTON_LIST = [
     { 

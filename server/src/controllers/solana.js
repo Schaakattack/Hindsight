@@ -1,48 +1,87 @@
-import solanaWeb3 from '@solana/web3.js'
-import date from 'date-and-time'
-const solanaConnection = new solanaWeb3.Connection(process.env.SOLANA_RPC_HOST)
-
+import solanaWeb3, {PublicKey} from "@solana/web3.js";
+import date from "date-and-time";
+import querystring from "querystring";
+import axios from "axios";
 const SolanaController = {
-    getTransactionsByWallet: async (address, limit, startTime = '', endTime = '')=>{
-        const pubKey = new solanaWeb3.PublicKey(address)
-        const transactionList = await solanaConnection.getSignaturesForAddress(pubKey, {limit})
-        // const transactionList = await solanaConnection.getSignaturesForAddress(pubKey, {
-        //     limit,
-        //     before: '3xP7iC3yf9msMquSCfJNgCYkZ4DUHZoHxwWoGofmVa2WQHAqxF89sa8Hq7h3WcdguUn8YAj67TQxojJSPMBj7nT1'
-        // })
-        const signatureList = transactionList.map(transaction=>transaction.signature);
-        const transactionDetails = await solanaConnection.getParsedTransactions(signatureList, {maxSupportedTransactionVersion:0});
-        const result = []
+	getTransactionsByWallet: async (
+		address,
+		limit,
+		startTime = "",
+		endTime = ""
+	) => {
+		const solanaConnection = new solanaWeb3.Connection(process.env.SOLANA_RPC_HOST, 'confirmed');
+		const pubKey = new solanaWeb3.PublicKey(address);
+		const transactionList = await solanaConnection.getSignaturesForAddress(
+			pubKey,
+			{ limit }
+		);
 
-        let startBlocktime = 0, endBlocktime = 0
-        if (startTime !== '' && startTime !== undefined)
-            startBlocktime = date.parse(startTime, 'YYYY-MM-DD').getTime()
-        if (endTime !== '' && endTime !== undefined)
-            endBlocktime = date.parse(endTime, 'YYYY-MM-DD').getTime()
+		const signatureList = transactionList.map(
+			(transaction) => transaction.signature
+		);
+		const transactionDetails = await solanaConnection.getParsedTransactions(
+			signatureList,
+			{ maxSupportedTransactionVersion: 0 }
+		);
+		const result = [];
 
-        transactionList.forEach((transaction, i)=> {
-            if (startBlocktime !== 0)
-                if (transaction.blockTime * 1000 < startBlocktime) return
-            if (endBlocktime !== 0)
-                if (transaction.blockTime * 1000 > endBlocktime) return
-            const programs = []
-            const instructions = transactionDetails[i].transaction.message.instructions
-            instructions.map(instruction=>{ 
-                programs.push(instruction.programId.toString())
-            })
-            let txDate = new Date(transaction.blockTime * 1000)
-            txDate = date.format(txDate, 'YYYY-MM-DD')
-            result.push({
-                time: txDate,
-                instructions,
-                signature: transaction.signature,
-                status: transaction.status,
-                programs
-            })
-        })
+		let startBlocktime = 0,
+			endBlocktime = 0;
+		if (startTime !== "" && startTime !== undefined)
+			startBlocktime = date.parse(startTime, "YYYY-MM-DD").getTime();
+		if (endTime !== "" && endTime !== undefined)
+			endBlocktime = date.parse(endTime, "YYYY-MM-DD").getTime();
 
-        return result
-    }
-}
+		transactionList.forEach((transaction, i) => {
+			if (startBlocktime !== 0)
+				if (transaction.blockTime * 1000 < startBlocktime) return;
+			if (endBlocktime !== 0)
+				if (transaction.blockTime * 1000 > endBlocktime) return;
+			const programs = [];
+			const instructions =
+				transactionDetails[i].transaction.message.instructions;
+			instructions.map((instruction) => {
+				programs.push(instruction.programId.toString());
+			});
+			let txDate = new Date(transaction.blockTime * 1000);
+			txDate = date.format(txDate, "YYYY-MM-DD");
+			
+			if (instructions.length > 0){
+				const from = instructions[0].parsed.info.source;
+				const to = instructions[0].parsed.info.destination;
+				const lamports = instructions[0].parsed.info.lamports;
+				result.push({
+					time: txDate,
+					amount: lamports / 10 ** 9,
+					from,
+					to
+				});
+			}
+		});
+		return result;
+	},
 
-export default SolanaController
+	getTokenHolders: async (tokenAddress, limit, offset) => {
+		let axiosOptions = {
+			headers: {
+				accept: "application/json",
+				token: process.env.SOLSCAN_API_KEY,
+			},
+			url: `${process.env.SOLANA_PUBLIC_ENDPOINT}/token/holders?${querystring.stringify({
+				tokenAddress,
+				limit,
+				offset,
+			})}`,
+		};
+		try {
+			const { data } = await axios.get(axiosOptions.url, {
+				headers: axiosOptions.headers,
+			});
+			return data;
+		} catch (error) {
+			return { data: [], err: error };
+		}
+	},
+};
+
+export default SolanaController;

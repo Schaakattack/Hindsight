@@ -11,58 +11,58 @@ import Discord from '../../assets/icons/discord.svg'
 
 const ABOUT_LINK_LIST = [
     { 
-        text: 'Work with us', 
+        text: 'About us', 
         href: '/work-with-us' 
     },
     { 
-        text: 'Support', 
+        text: 'Roadmap', 
         href: '/support' 
     },
     { 
-        text: 'Go Premium', 
+        text: 'Resources', 
         href: '/premium' 
     },
     { 
-        text: 'Partners', 
+        text: 'FAQ', 
         href: '/partners' 
-    },
-    { 
-        text: 'Careers', 
-        href: '/careers' 
     }
 ];
 
-const SUPPORTED_CHAINS_LINK_LIST = [
+const CONTACT_INFO = [
     { 
-        text: 'Ethereum', 
-        href: '/work-with-us' 
+        text: 'info@hindsight.com', 
+        href: 'mailto:info@hindsight.com' 
     },
     { 
-        text: 'Solana', 
-        href: '/support' 
+        text: 'support@hindsight.com', 
+        href: 'mailto:support@hindsight.com' 
     }
 ];  
 
-const SOCIAL_LINK_LIST = [
-    { 
-        text: 'instagram', 
-        icon: Instagram 
+const CONNECT_LIST = [
+    {
+        text: "Discord",
+        href: ""
     },
-    { 
-        text: 'telegram', 
-        icon: Telegram 
+    {
+        text: "Telegram",
+        href: ""
     },
-    { 
-        text: 'facebook', 
-        icon: Facebook 
+    {
+        text: "LinkedIn",
+        href: ""
     },
-    { 
-        text: 'twitter', 
-        icon: Twitter 
+    {
+        text: "Twitter",
+        href: ""
     },
-    { 
-        text: 'discord', 
-        icon: Discord 
+    {
+        text: "Github",
+        href: ""
+    },
+    {
+        text: "Youtube",
+        href: ""
     }
 ];
 
@@ -75,45 +75,47 @@ export default function Footer(){
                         <Link to='#' className='footer-logo'>
                             <img src={ FooterLogo } alt='footer logo' />
                         </Link>
-                        <p className='description text-base font-medium tracking-tighter text-footer-color mt-4 relative'>
-                            Blockchain data visualization<br /> made easy.
+                        <p className='description text-small font-medium text-footer-color mt-4 relative'>
+                            Blockchain data visualization made easy.
                         </p>
                     </div>
                     <div className='footer-section'>
-                        <h4 className='footer-section__title font-brand-bold font-bold text-xx-medium text-white mb-9'>About Us</h4>   
+                        <h4 className='footer-section__title font-brand-regular font-regular text-xx-medium text-white mb-9'>About</h4>   
                         <ul className='footer-link__list flex flex-col gap-2.5'>
                             {ABOUT_LINK_LIST.map((link, idx) => (
                                 <li key={ idx }>
-                                    <Link to={ link.href } className='text-base font-medium tracking-tighter text-footer-color hover:text-brand-400'>{ link.text }</Link>
+                                    <Link to={ link.href } className='hover:no-underline text-small font-medium text-light-grey-2 hover:text-yellow-1'>{ link.text }</Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
                     <div className='footer-section'>
-                        <h4 className='footer-section__title font-brand-bold font-bold text-xx-medium text-white mb-9'>Supported Chains</h4>   
-                        <ul className='footer-link__list flex flex-col gap-2.5'>
-                            {SUPPORTED_CHAINS_LINK_LIST.map((link, idx) => (
+                        <h4 className='footer-section__title font-brand-regular font-regular text-xx-medium text-white mb-9'>Connect</h4>   
+                        <ul className='footer-link__list flex flex-col justify-between gap-2'>
+                            {CONNECT_LIST.map((link, idx) => (
                                 <li key={ idx }>
-                                    <Link to={ link.href } className='text-base font-medium tracking-tighter text-footer-color hover:text-brand-400'>{ link.text }</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className='footer-section'>
-                        <h4 className='footer-section__title font-brand-bold font-bold text-xx-medium text-white mb-9'>Connect With Us</h4>   
-                        <ul className='footer-link__list flex justify-between gap-5'>
-                            {SOCIAL_LINK_LIST.map((link, idx) => (
-                                <li key={ idx }>
-                                    <Link to={ link.href }>
-                                        <img src={ link.icon } alt={ link.text } />
+                                    <Link className="text-small hover:no-underline text-light-grey-2 hover:text-yellow-1" to={ link.href }>
+                                        {link.text}
+                                        {/* <img src={ link.icon } alt={ link.text } /> */}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
+                    <div className='footer-section'>
+                        <h4 className='footer-section__title font-brand-regular font-regular text-xx-medium text-white mb-9'>Get in touch</h4>   
+                        <ul className='footer-link__list flex flex-col gap-2.5'>
+                            {CONTACT_INFO.map((link, idx) => (
+                                <li key={ idx }>
+                                    <Link to={ link.href } className='text-small font-medium text-light-grey-2 hover:text-yellow-1'>{ link.text }</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    
                 </div>      
                 <div className='copyright text-center'>
-                    <p className='text-base font-medium tracking-tighter text-footer-color'>
+                    <p className='text-base font-medium text-footer-color'>
                         Copyright ©2023 Hindsight, All rights reserved.
                     </p>
                 </div>          

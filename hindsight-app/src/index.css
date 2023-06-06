@@ -98,6 +98,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  background-color: #0D0E0F;
+}
+
+#root {
+  background-color: #0D0E0F;
 }
 
 body {
@@ -133,3 +138,11 @@ input:checked + label .icon {
   transform: translateX(-100%);
 }
 
+.v-divider{
+  width: 0.5px;
+  height: 48px;
+
+  /* Outline/Outline */
+
+  background: #303437;
+}
