@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavItem from "./items/NavItem";
+import NavItem from "../items/NavItem";
 const DropdownMenu = () => {
 	const [isHovered, setIsHovered] = useState(false);
 
@@ -44,10 +44,9 @@ const DropdownMenu = () => {
 			>
 				<NavItem
 					className="text-light-grey-4"
+					isDropDown={true}
 					{...{
 						text: "About",
-						// href: "/premium",
-						// before_text: "Go_Premium",
 					}}
 				>
 					About
@@ -55,13 +54,13 @@ const DropdownMenu = () => {
 			</div>
 			{isHovered && (
 				<ul
-					className="dropdown absolute flex flex-col gap-4 bg-dark-grey-4 rounded-md pt-6 pb-6 w-80"
+					className="dropdown absolute flex flex-col gap-2 bg-dark-grey-4 rounded-md w-80 p-4 border-dark-grey-1"
 					onMouseEnter={handleMouseEnter}
 					onMouseLeave={handleMouseLeave}
 				>
 					{MENU_LIST.map((menu, idx) => (
 						<li key={idx} className="flex flex-col gap-2 pt-4 pb-2 pl-6 pr-6">
-							<a className="text-small text-light-grey-3 hover:text-yellow-1" href={menu.href}>
+							<a className="text-small text-light-grey-3 hover:text-yellow-1  cursor-pointer" href={menu.href}>
 								{menu.text}
 							</a>
 							<span className="text-light-grey-4 text-xx-small font-brand-regular">{menu.description}</span>

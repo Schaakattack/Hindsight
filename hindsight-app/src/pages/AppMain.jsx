@@ -124,11 +124,10 @@ const TOKEN_LIST_GROUP = [
     } 
 ];
 
-function DApp(){
+function AppMain(){
     return (
         <>
             <Header isApp={ true }></Header>
-
                 <section className='blockchain-action-group-section pt-[40px] pb-[80px]'>
                     <div className='container mx-auto max-w-xl'>
                         <div className='blockchain-action-group flex justify-between items-center mt-[1px]'>
@@ -185,4 +184,4 @@ function DApp(){
     )
 }
 
-export default DApp
+export default AppMain

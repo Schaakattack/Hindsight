@@ -233,6 +233,11 @@ export default {
 				normal: "24px",
 				medium: '64px'
 			},
+			borderWidth: {
+				team: "16px",
+				'team-popup': "8px",
+				outline: '1px'
+			},
 			letterSpacing: {
 				"x-tightest": "0.5px",
 				tightest: "0.1px",

@@ -10,7 +10,7 @@ import UserIcon from "../../assets/user-icon.svg";
 import Navbar from "./Navbar";
 import DefaultButton from "../buttons/DefaultButton";
 
-const Header = ({ isNavbar, isApp, isAction, isLogin, isToken }) => {
+const Header = ({ isApp, isToken }) => {
 	const [actionGroupActive, setActionGroupActive] = useState(false);
 
 	const blur = () => {
@@ -18,35 +18,37 @@ const Header = ({ isNavbar, isApp, isAction, isLogin, isToken }) => {
 	};
 
 	return (
-		<header
-			className={`relative header bg-black ${
-				isApp ? "py-[0.6rem] " : "py-4"
-			} z-20 `}
-			onBlur={blur}
-		>
-			<div
-				className={`container ${
-					isApp ? "mx-6.51" : "mx-auto"
-				} flex justify-between items-center ${
-					isToken ? "" : "max-w-xl"
-				}`}
-			>
+		<header className={`relative header bg-black ${ isApp ? "py-[0.6rem] " : "py-4" } z-20 `} onBlur={blur}>
+			<div className={`container ${ isApp ? "mx-6.51" : "mx-auto" } flex justify-between items-center ${ isToken ? "" : "max-w-xl" }`}>
 				<Link to="/" className="header-logo">
-					<img style={{height:"48px"}} src={isApp ? AppLogo : Logo} alt="logo" />
+					<img
+						style={{ height: "48px" }}
+						src={isApp ? AppLogo : Logo}
+						alt="logo"
+					/>
 				</Link>
-				{!isApp && <Navbar />}
+				{!isApp && <Navbar type={1} />}
+				{isApp && <Navbar type={2} />}
 				<div className="flex gap-6 items-center">
 					{!isApp && (
 						<>
-							<DefaultButton className="btn-outline-xs" addClass="w-[168px]" to="/login">
+							<DefaultButton
+								className="btn-outline-xs"
+								addClass="w-[168px]"
+								to="/login"
+							>
 								Connect
 							</DefaultButton>
-							<DefaultButton className="btn-sm" addClass="w-[168px]" to="/dapp">
+							<DefaultButton
+								className="btn-sm"
+								addClass="w-[168px]"
+								to="/dapp"
+							>
 								Launch App
 							</DefaultButton>
 						</>
 					)}
-					{isApp && !isLogin && (
+					{isApp && (
 						<DefaultButton
 							className="btn-default"
 							addClass="w-[168px] h-btn place-items-center rounded-btn text-primary-brand-2 bg-transparent border border-primary-brand-2 "
@@ -55,7 +57,7 @@ const Header = ({ isNavbar, isApp, isAction, isLogin, isToken }) => {
 							Connect
 						</DefaultButton>
 					)}
-					{isLogin && (
+					{/* {isLogin && (
 						<div className="action-group">
 							<Link
 								className="avatar relative"
@@ -94,7 +96,7 @@ const Header = ({ isNavbar, isApp, isAction, isLogin, isToken }) => {
 								</div>
 							</Link>
 						</div>
-					)}
+					)} */}
 				</div>
 			</div>
 		</header>

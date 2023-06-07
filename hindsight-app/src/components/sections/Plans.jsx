@@ -9,7 +9,7 @@ const Plans = ()=>{
     return (
         <section className="relative z-10">
             <div className="container mx-auto max-w-xl">
-                <div className="text-xxx-large-x text-light-grey-3 text-center mb-12">Unlock Hindsight's Full Potential</div>
+                <div className="text-xxx-large-x text-light-grey-3 text-center mb-12 mt-20">Unlock Hindsight's Full Potential</div>
                 <p className='font-brand-regular font-regular text-x-medium text-secondary-color text-center mb-16'>
                     Our premium service provides advanced features and benefits for those looking for insights and protection against scams.
                 </p>

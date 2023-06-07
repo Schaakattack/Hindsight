@@ -84,7 +84,7 @@ export default function Footer(){
                         <ul className='footer-link__list flex flex-col gap-2.5'>
                             {ABOUT_LINK_LIST.map((link, idx) => (
                                 <li key={ idx }>
-                                    <Link to={ link.href } className='hover:no-underline text-small font-medium text-light-grey-2 hover:text-yellow-1'>{ link.text }</Link>
+                                    <Link to={ link.href } className='hover:no-underline font-brand-regular text-small font-medium text-light-grey-2 hover:text-yellow-1'>{ link.text }</Link>
                                 </li>
                             ))}
                         </ul>
@@ -94,7 +94,7 @@ export default function Footer(){
                         <ul className='footer-link__list flex flex-col justify-between gap-2'>
                             {CONNECT_LIST.map((link, idx) => (
                                 <li key={ idx }>
-                                    <Link className="text-small hover:no-underline text-light-grey-2 hover:text-yellow-1" to={ link.href }>
+                                    <Link className="text-small font-brand-regular hover:no-underline text-light-grey-2 hover:text-yellow-1" to={ link.href }>
                                         {link.text}
                                         {/* <img src={ link.icon } alt={ link.text } /> */}
                                     </Link>
@@ -107,7 +107,7 @@ export default function Footer(){
                         <ul className='footer-link__list flex flex-col gap-2.5'>
                             {CONTACT_INFO.map((link, idx) => (
                                 <li key={ idx }>
-                                    <Link to={ link.href } className='text-small font-medium text-light-grey-2 hover:text-yellow-1'>{ link.text }</Link>
+                                    <Link to={ link.href } className='text-small font-brand-regular font-medium text-light-grey-2 hover:text-yellow-1'>{ link.text }</Link>
                                 </li>
                             ))}
                         </ul>
