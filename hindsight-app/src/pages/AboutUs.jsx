@@ -48,7 +48,7 @@ const AboutUs = ()=> {
                 </p>
                 
             </section>
-            <Popup visible={visible} style={{maxWidth: '732px', backgroundColor:'#202325', border: '1px #303437 solid', padding: '32px'}} onClose={() => setVisible(false)}>
+            <Popup visible={visible} style={{maxWidth: '732px', backgroundColor:'#202325', border: '1px #303437 solid', padding: '32px', boxShadow: '0px 20px 56px rgba(0, 0, 0, 0.3)'}} onClose={() => setVisible(false)}>
                 <div className='flex cursor-pointer bg-dark-grey-4 gap-4'>
                     <img src={Avatar1} className='rounded-full border-team-popup border-dark-grey-3 w-[144px] h-[144px]'></img>
                     <div className='flex flex-col gap-2'>

@@ -8,11 +8,10 @@ import {
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Roadmap from './pages/Roadmap'
-// import WorkWithUs from './pages/WorkWithUs'
 import Premium from './pages/Pricing'
 import AppMain from './pages/AppMain'
-import AllTokens from './pages/AllTokens'
-import MyWallet from './pages/MyWallet'
+import AppExplorer from './pages/AppExplorer'
+// import MyWallet from './pages/MyWallet'
 import Inspector from './pages/Inspector'
 import ErrorPage from './pages/404'
 
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/login',
-		element: <Login></Login>,
+		element: <Login/>,
 		errorElement: <ErrorPage/>    
 	},
 	{
@@ -63,15 +62,15 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage/>
 	},
 	{
-		path: '/app/tokens',
-		element: <AllTokens />,
+		path: '/app/explorer',
+		element: <AppExplorer />,
 		errorElement: <ErrorPage />
 	},
-	{
-		path: '/app/wallet',
-		element: <MyWallet />,
-		errorElement: <ErrorPage />
-	},
+	// {
+	// 	path: '/app/wallet',
+	// 	element: <MyWallet />,
+	// 	errorElement: <ErrorPage />
+	// },
 	{
 		path: '/app/inspect',
 		element: <Inspector />,

@@ -122,7 +122,7 @@ body {
 }
 
 .webkit-mask::after {
-  -webkit-mask: /*4*/
+  -webkit-mask: 4
   linear-gradient(#fff 0 0) padding-box, 
   linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor; /*5'*/

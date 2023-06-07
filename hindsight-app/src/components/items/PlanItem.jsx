@@ -26,7 +26,7 @@ const PlanItem = ()=>{
             <div className="p-[8px] w-fit rounded border rounded-3 border-dark-grey-4">
                 <img src={Tick}></img>
             </div>
-            <DefaultButton className="btn-sm" addClass="w-fit" to="/dapp"> Choose Plan </DefaultButton>
+            <DefaultButton className="btn-sm" addClass="w-fit" to="/premium"> Choose Plan </DefaultButton>
         </div>
     )
 }

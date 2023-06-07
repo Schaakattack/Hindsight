@@ -19,7 +19,7 @@ const Header = ({ isApp, isToken }) => {
 
 	return (
 		<header className={`relative header bg-black ${ isApp ? "py-[0.6rem] " : "py-4" } z-20 `} onBlur={blur}>
-			<div className={`container ${ isApp ? "mx-6.51" : "mx-auto" } flex justify-between items-center ${ isToken ? "" : "max-w-xl" }`}>
+			<div className={`container mx-auto flex justify-between items-center ${ isToken ? "" : "max-w-xl" }`}>
 				<Link to="/" className="header-logo">
 					<img
 						style={{ height: "48px" }}
@@ -42,7 +42,7 @@ const Header = ({ isApp, isToken }) => {
 							<DefaultButton
 								className="btn-sm"
 								addClass="w-[168px]"
-								to="/dapp"
+								to="/app"
 							>
 								Launch App
 							</DefaultButton>
@@ -77,7 +77,7 @@ const Header = ({ isApp, isToken }) => {
 										<li className="rounded-xl hover:bg-header-action-hover-bg-color">
 											<Link
 												className="dropdown-item flex items-center py-2.5 pl-4 pr-6 gap-2 text-base font-medium tracking-tighter bg-gradient-primary bg-clip-text text-fill-transparent"
-												to="/dapp"
+												to="/app/networks"
 											>
 												<img src={LogoutIcon} />
 												Log Out
@@ -86,7 +86,7 @@ const Header = ({ isApp, isToken }) => {
 										<li className="rounded-xl hover:bg-header-action-hover-bg-color">
 											<Link
 												className="dropdown-item flex items-center py-2.5 pl-4 pr-6 gap-2 text-base font-medium tracking-tighter bg-gradient-primary bg-clip-text text-fill-transparent"
-												to="/dapp"
+												to="/app/networks"
 											>
 												<img src={UserIcon} />
 												Manage

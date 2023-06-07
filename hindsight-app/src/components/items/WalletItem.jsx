@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const WalletItem = ({ icon, text, desc }) => {
     return (
-        <Link className='wallet-item rounded-[32px] bg-dark-grey-3 hover:bg-dark-grey-2 cursor-pointer relative' to='/dapp'>
+        <Link className='wallet-item rounded-[32px] bg-dark-grey-3 hover:bg-dark-grey-2 cursor-pointer relative' to='/app/networks'>
             <div className='flex items-start py-4 px-8'>
                 <img src={ icon } alt='' className='icon w-6 h-6 mr-19' />
                 {/* <div className='flex flex-col items-center'> */}

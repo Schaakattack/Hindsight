@@ -23,7 +23,7 @@ const HOME_MENU_LIST = [
 	},
 	{
 		text: "Explore",
-		href: "/dapp",
+		href: "/app/explorer",
 	},
 ];
 

@@ -12,7 +12,7 @@ const Banner = ({ img, title, desc }) => {
                         { ReactHtmlParser(desc) }
                     </p>
                     <div className='action-group flex justify-center'>
-                        <DefaultButton className='btn-md' addClass="w-fit" to='/dapp'>Launch App</DefaultButton>
+                        <DefaultButton className='btn-md' addClass="w-fit" to='/app/networks'>Launch App</DefaultButton>
                     </div>
                 </div>
                 {/* <div className='section-block'>
