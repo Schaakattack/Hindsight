@@ -2,6 +2,7 @@
 import Fastify from "fastify";
 import FastifyCors from '@fastify/cors';
 import ScanRoutes from "./src/routes/scan.js";
+import 'dotenv/config'
 const fastify = Fastify({ logger: true });
 /**
  * Run the server!

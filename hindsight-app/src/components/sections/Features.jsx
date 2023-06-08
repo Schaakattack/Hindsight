@@ -55,7 +55,7 @@ const FEATURE_LIST = [
 export default function Header(){
     return (
         <section className='relative z-10 key-features pt-10 pb-42'>
-            <div className='container mx-auto max-w-xl flex flex-col items-center gap-10'>
+            <div className='container mx-auto flex flex-col items-center gap-10'>
                 <h2 className='font-brand-medium text-white text-xx-large'>Features</h2>
                 <p className='font-brand-regular font-regular text-x-medium text-secondary-color text-center'>
                     Our easy-to-understand data visualization tools allow you to<br/> quickly gain insights into the data that lives on the blockchain.

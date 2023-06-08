@@ -19,7 +19,7 @@ const Header = ({ isApp, isToken }) => {
 
 	return (
 		<header className={`relative header bg-black ${ isApp ? "py-[0.6rem] " : "py-4" } z-20 `} onBlur={blur}>
-			<div className={`container mx-auto flex justify-between items-center ${ isToken ? "" : "max-w-xl" }`}>
+			<div className={`container mx-auto flex justify-between items-center ${ isToken ? "" : "" }`}>
 				<Link to="/" className="header-logo">
 					<img
 						style={{ height: "48px" }}

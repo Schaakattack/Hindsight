@@ -2,14 +2,13 @@ import date from "date-and-time";
 import axios from "axios";
 
 const EthereumController = {
-    getToken: async () => {
+    getToken: async (tokenAddress) => {
         let result = [];
 		try {
 			const apiUrl = `${process.env.ETHSCAN_PUBLIC_ENDPOINT}/api?module=token&action=tokeninfo&contractaddress=${tokenAddress}&apikey=${process.env.ETHSCAN_API_KEY}`;
 			await axios
 				.get(apiUrl)
 				.then((response) => {
-                    console.log(response)
 					if (response.data.status === "1")
 						result = response.data.result;
 				})
@@ -34,10 +33,10 @@ const EthereumController = {
 						tokenHolders = response.data.result;
 				})
 				.catch((error) => {
-					console.error(error);
+					// console.error(error);
 				});
 		} catch (error) {
-			console.error(error);
+			// console.error(error);
 		}
 
 		return tokenHolders;
@@ -49,7 +48,6 @@ const EthereumController = {
 			await axios
 				.get(apiUrl)
 				.then((response) => {
-                    console.log(response)
 					if (response.data.status === "1")
 						result = response.data.result;
 				})

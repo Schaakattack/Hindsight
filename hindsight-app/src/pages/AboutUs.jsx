@@ -11,7 +11,7 @@ const AboutUs = ()=> {
     return (
         <>
             <Header/>
-            <section className="container mx-auto max-w-xl">
+            <section className="container mx-auto">
                 <h1 className="text-light-grey-2 text-center text-xxx-large-f mt-16 mb-6">About Hindsight</h1>
                 <p className='text-x-medium text-light-grey-2 font-brand-regular mb-26'>
                     The Hindsight team is a small but dedicated team, working around the clock to bring the future of

@@ -67,7 +67,7 @@ const AppNetwork = () => {
 	return (
 		<>
 			<Header isApp={true} />
-			<section className="container mx-auto max-w-xl">
+			<section className="container mx-auto">
 				<h1 className="text-light-grey-2 text-center text-xxx-large-f mt-20 mb-16">
 					Select Network
 				</h1>

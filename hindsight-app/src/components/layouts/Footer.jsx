@@ -69,7 +69,7 @@ const CONNECT_LIST = [
 export default function Footer(){
     return (
         <footer className='footer pt-25 pb-10 relative z-10'>
-            <div className='container footer-inner mx-auto max-w-xl rounded-2xl'>
+            <div className='container footer-inner mx-auto rounded-2xl'>
                 <div className='flex justify-between pb-12.5'>
                     <div className='footer-section flex flex-col'>
                         <Link to='#' className='footer-logo'>

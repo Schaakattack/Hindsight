@@ -5,7 +5,7 @@ import ClassicLogo from '../../assets/home/classic.png';
 export default function WhatDoWe(){
     return (
         <section className='relative z-10 what-do-we'>
-            <div className='container max-w-xl mx-auto flex flex-col items-center gap-6.5'>
+            <div className='container mx-auto flex flex-col items-center gap-6.5'>
                 <h2 className='font-brand-medium font-semibold text-xxx-large-x text-light-grey-0'>About Hindsight</h2>
                 <p className='font-brand-regular font-light text-x-medium tracking-tighter text-secondary-color text-center'>
                     Welcome to Hindsight, the place for blockchain data analysis. Our platform helps you <br/>understand token trends, price movements, and network activity across blockchain networks.<br/>All the data is presented in an easy-to-understand format with visuals.

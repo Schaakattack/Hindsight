@@ -7,7 +7,7 @@
     "build": "babel src -d dist",
     "start": "npm run build && node dist",
     "restart": "rimraf dist && npm run start",
-    "dev": "nodemon --exec babel-node ./server.js"
+    "dev": "nodemon -r dotenv/config --exec babel-node ./server.js"
   },
   "author": "",
   "license": "ISC",

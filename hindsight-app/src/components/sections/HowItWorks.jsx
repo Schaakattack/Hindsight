@@ -1,7 +1,7 @@
 const HowItWorks = ()=>{
     return (
         <section className="relative z-10 bg-dark-grey-4 mb-40">
-            <div className="container max-w-xl mx-auto py-10">
+            <div className="container mx-auto py-10">
                 <div className="text-xxx-large-x text-light-grey-3 text-center mb-12">How it works</div>
                 <div className="grid grid-cols-4 gap-28 place-items-center">
                     <div className="text-center flex flex-col gap-4">

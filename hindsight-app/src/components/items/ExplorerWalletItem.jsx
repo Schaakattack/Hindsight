@@ -4,41 +4,45 @@ import CopyIcon from '@/assets/dapp/explorer/copy.png';
 import WebsiteIcon from "../../assets/website-icon.svg";
 import EtherscanIcon from "../../assets/etherscan-icon.svg";
 import StarIcon from "../../assets/star-icon.svg";
-const ExplorerWalletItem = () => {
+const ExplorerWalletItem = ({data, id}) => {
 	return (
-		<>
-			<div className="flex">
-				<span className="text-xx-small text-light-grey-0 font-brand-regular mr-[10px]">#</span>
-				<div className="mr-[16px]">
-					<img src={EllipseIcon02}></img>
-				</div>
-				<span className="text-xx-small text-light-grey-0 font-brand-regular mr-[24px]">Name</span>
-				<span className="text-xx-small text-light-grey-0 font-brand-regular mr-[8px]">Contract</span>
-                <div>
+		<tr className="bg-dark-grey-4 items-center px-6">
+            <td className="pl-6 text-xx-small text-light-grey-0 font-brand-regular py-[10px] rounded-l-md">{id + 1}.</td>
+            <td className="py-[10px]">
+                <img src={`https://etherscan.io/${data.img}`} className="rounded-full"></img>
+            </td>
+            <td className="text-xx-small text-light-grey-0 font-brand-regular">{data.name}</td>
+            <td className="text-xx-small text-light-grey-0 font-brand-regular items-center flex">
+                <span>{data.address}</span>
+                <div className="float-right">
                     <img src={CopyIcon}></img>
                 </div>
-				<span className="text-xx-small text-light-grey-0 font-brand-regular">Market Cap</span>
-				<span className="text-xx-small text-light-grey-0 font-brand-regular">Current Supply</span>
-				<span className="text-xx-small text-light-grey-0 font-brand-regular">Holders</span>
-				<ul className="options flex gap-1.5 justify-center">
-					<li>
-						<Link className="option-item">
-							<img src={WebsiteIcon} alt="" />
-						</Link>
-					</li>
-					<li>
-						<Link className="option-item">
-							<img src={EtherscanIcon} alt="" />
-						</Link>
-					</li>
-					<li>
-						<Link className="option-item">
-							<img src={StarIcon} alt="" />
-						</Link>
-					</li>
-				</ul>
-			</div>
-		</>
+            </td>
+            
+            {/* <td className="text-xx-small text-light-grey-0 font-brand-regular">$8,000,0000</td> */}
+            <td className="text-xx-small text-light-grey-0 font-brand-regular">{data.maxSupply.toLocaleString('en-US', { style: 'currency', currency: 'USD'})}</td>
+            <td className="text-xx-small text-light-grey-0 font-brand-regular">{data.holders}</td>
+            <td className="rounded-r-md">
+                <ul className="options flex gap-1.5 justify-center">
+                    <li>
+                        <Link className="option-item">
+                            <img src={WebsiteIcon} alt="" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="option-item">
+                            <img src={EtherscanIcon} alt="" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="option-item">
+                            <img src={StarIcon} alt="" />
+                        </Link>
+                    </li>
+                </ul>
+            </td>
+            
+		</tr>
 	);
 };
 

@@ -1,7 +1,7 @@
 const Breadcrumb = ()=>{
     return (
         <>
-            <div className="container mx-auto max-w-xl mt-20">
+            <div className="container mx-auto mt-20">
                 <div className="text-small flex gap-[10px]">
                     <span className="font-brand-regular text-dark-grey-1">Explorer</span>
                     <span className="font-brand-regular text-light-grey-2">&gt;</span>

@@ -59,7 +59,7 @@ function Roadmap(){
         <>
             <Header />
             <section className='roadmap-section mb-72'>
-                <div className='container mx-auto max-w-xl'>
+                <div className='container mx-auto'>
                     <h3 className='section-title font-brand-bold font-bold text-xxx-large-s text-white pt-12.5 pb-10 text-center'>Roadmap</h3>
                     <div className='flex flex-col gap-9.75'>
                         {STAGE_LIST.map((item, idx) => (

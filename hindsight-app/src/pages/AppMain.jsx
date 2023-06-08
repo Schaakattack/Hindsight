@@ -129,7 +129,7 @@ function AppMain(){
         <>
             <Header isApp={ true }></Header>
                 <section className='blockchain-action-group-section pt-[40px] pb-[80px]'>
-                    <div className='container mx-auto max-w-xl'>
+                    <div className='container mx-auto'>
                         <div className='blockchain-action-group flex justify-between items-center mt-[1px]'>
                             <div className='blockchain-action-group__l flex gap-[20px]'>                    
                                 { BLOCKCHAIN_BUTTON_LIST.map((btnInfo, idx) => (
@@ -144,7 +144,7 @@ function AppMain(){
                 </section>
 
                 <section className='featured-token-section'>
-                    <div className='container mx-auto max-w-xl'>
+                    <div className='container mx-auto'>
                         <div className='featured-token-group flex justify-between'>
                             {ELLIPSE_LIST.map((item, idx) => (
                                 <FeaturedTokenItem { ...item } key={ idx } />
@@ -154,7 +154,7 @@ function AppMain(){
                 </section>
 
                 <form action='#' className='search-form pt-10 pb-20'>
-                    <div className='container mx-auto max-w-xl px-[192px]'>
+                    <div className='container mx-auto px-[192px]'>
                         <div className='input-group relative'>
                             <input type='text' className='form-control text-base tracking-x-tightest py-3.5 px-6 w-full text-fifth-color font-normal outline-0 rounded-3.5 bg-gradient-form-control-bg-color bg-background' placeholder='Search by name, address, symbol' />
                             <span className='icon block top-0 right-0 rounded-tr-3.5 rounded-br-3.5 bg-gradient-form-control-bg-color bg-background py-3.5 pl-4.6 pr-6.55 absolute'>
@@ -165,7 +165,7 @@ function AppMain(){
                 </form>
 
                 <section className='token-list-group-section'>
-                    <div className='container mx-auto max-w-xl'>
+                    <div className='container mx-auto'>
                         <div className='flex gap-10 mb-10'>
                             {TOKEN_LIST_GROUP.map((item, idx) => (
                                 <TokenList { ...item } key={ idx } />

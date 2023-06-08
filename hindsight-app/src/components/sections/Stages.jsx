@@ -32,7 +32,7 @@ const STAGE_LIST = [
 export default function Stages(){
     return (
         <section className='relative z-10 stage pt-19 pb-25'>
-            <div className='container mx-auto max-w-xl flex justify-center flex-col gap-16.3'>
+            <div className='container mx-auto flex justify-center flex-col gap-16.3'>
                 <h2 className='font-brand-medium text-xxx-large-s text-white text-center'>Roadmap</h2>
                 <div className='flex gap-6.3 text-center pb-7.5'>
                     {STAGE_LIST.map((item, idx) => (
